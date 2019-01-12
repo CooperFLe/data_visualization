@@ -157,6 +157,10 @@ plot2 <- gvisSankey(plot2.data, from="plot2.from", to="plot2.to", weight="plot2.
 ########################################################
 ################### CONSTRUCT PLOTS ####################
 ########################################################
-
 plot(plot1)
 plot(plot2)
+sink("income.html", append=FALSE, split=FALSE)
+print(plot1, filename="tmp.html")
+sink("spending.html", append=FALSE, split=FALSE)
+print(plot2, filename="tmp.html")
+sink()
